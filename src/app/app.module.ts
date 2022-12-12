@@ -10,6 +10,7 @@ import { FormulariComponent } from './formulari/formulari.component';
 import { CondicionsComponent } from './condicions/condicions.component';
 import { ContacteComponent } from './contacte/contacte.component';
 import { PlanaPrincipalComponent } from './plana-principal/plana-principal.component';
+import { NavegacioComponent } from './navegacio/navegacio.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PlanaPrincipalComponent } from './plana-principal/plana-principal.compo
     FormulariComponent,
     CondicionsComponent,
     ContacteComponent,
-    PlanaPrincipalComponent
+    PlanaPrincipalComponent,
+    NavegacioComponent
   ],
   imports: [
     BrowserModule
