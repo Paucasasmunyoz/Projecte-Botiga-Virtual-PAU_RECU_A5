@@ -1,0 +1,22 @@
+article{
+  width: 100%;
+  height: 85%;
+  background: linear-gradient(gainsboro, lightblue);
+}
+
+#ImgArt {
+  height: 60%;
+  width: 100%;
+}
+
+#ImgArt2 {
+  height: 100%;
+  width: 100%;
+}
+
+#imgs img {
+  float: left;
+  height: 10%;
+  width: 10%;
+  padding: 7%;
+}

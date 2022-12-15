@@ -1,0 +1,13 @@
+footer{
+  height: 15%;
+  width: 100%;
+  background: linear-gradient(gainsboro, lightblue);
+}
+
+#imgs2 img{
+  float: left;
+  height: 1%;
+  width: 3%;
+  padding: 1%;
+  float:right;
+}

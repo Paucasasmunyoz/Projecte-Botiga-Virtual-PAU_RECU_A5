@@ -1,0 +1,118 @@
+article{
+  background: linear-gradient(gainsboro, lightblue);
+  width: 75%;
+  height: 85%;
+  display: inline-block;
+}
+aside{
+  background: linear-gradient(lightblue, cornflowerblue);
+  height: 85%;
+  width: 25%;
+  display: inline-block;
+  float: right;
+}
+
+.fotos{
+  height: 15%;
+  width: 80%;
+}
+
+.text{
+  line-height: 450%;
+}
+
+#contenidor_article{
+  background: linear-gradient(lightblue, cornflowerblue);
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+#img_articleee{
+  background: linear-gradient(lightblue, cornflowerblue);
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 100%;
+  width: 10%;
+  float: left;
+}
+
+#text_article{
+  background: linear-gradient(lightblue, cornflowerblue);
+  float: left;
+  height: 100%;
+  width:40% ;
+}
+
+#preu_article{
+  background: linear-gradient(lightblue, cornflowerblue);
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 100%;
+  width: 10%;
+  float: left;
+}
+
+#preu_general{
+  background-color: white;
+  height: 90%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#text_llista{
+  height: 60%;
+  width: 50%;
+  margin-left: 5%;
+  float: left;
+}
+
+#preu_llista{
+  height: 60%;
+  width: 30%;
+  float: left;
+}
+
+#preu_total{
+  width: 90%;
+  margin-left: 5%;
+}
+
+#boton {
+  background: #fff;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+#boton:before, #boton:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background-color: cornflowerblue;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#boton:after {
+  left: 100%;
+}
+#boton:hover {
+  color: #fff;
+}
+#boton:hover:before {
+  left: 0;
+}
+#boton:hover:after {
+  left: 50%;
+}
