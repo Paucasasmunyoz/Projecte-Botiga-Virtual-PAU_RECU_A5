@@ -1,0 +1,16 @@
+article{
+  background: linear-gradient(gainsboro, lightblue);
+  width: 80%;
+  height: 85%;
+  display: inline-block;
+}
+
+aside{
+  background: linear-gradient(lightblue, cornflowerblue);
+  height: 85%;
+  width: 20%;
+  display: inline-block;
+  float: right;
+}
+
+

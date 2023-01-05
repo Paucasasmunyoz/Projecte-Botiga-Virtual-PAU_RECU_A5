@@ -11,6 +11,7 @@ import { CondicionsComponent } from './condicions/condicions.component';
 import { ContacteComponent } from './contacte/contacte.component';
 import { PlanaPrincipalComponent } from './plana-principal/plana-principal.component';
 import { NavegacioComponent } from './navegacio/navegacio.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavegacioComponent } from './navegacio/navegacio.component';
     NavegacioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
