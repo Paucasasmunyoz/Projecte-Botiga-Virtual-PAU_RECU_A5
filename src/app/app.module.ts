@@ -12,6 +12,10 @@ import { ContacteComponent } from './contacte/contacte.component';
 import { PlanaPrincipalComponent } from './plana-principal/plana-principal.component';
 import { NavegacioComponent } from './navegacio/navegacio.component';
 import { AppRoutingModule } from './app-routing.module';
+import { IniciSessioComponent } from './inici-sessio/inici-sessio.component';
+import { RobaComponent } from './roba/roba.component';
+import { AccesorisComponent } from './accesoris/accesoris.component';
+import { SuplementsComponent } from './suplements/suplements.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { AppRoutingModule } from './app-routing.module';
     CondicionsComponent,
     ContacteComponent,
     PlanaPrincipalComponent,
-    NavegacioComponent
+    NavegacioComponent,
+    IniciSessioComponent,
+    RobaComponent,
+    AccesorisComponent,
+    SuplementsComponent
   ],
   imports: [
     BrowserModule,

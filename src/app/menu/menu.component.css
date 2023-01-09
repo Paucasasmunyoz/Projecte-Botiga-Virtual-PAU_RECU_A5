@@ -11,10 +11,42 @@ header input {
   font-size: 160%;
 }
 
-header img{
+#imgcap{
   float: left;
   height: 97%;
   width: 18%;
   margin-bottom: 20px;
   margin-right: 20%;
+}
+
+#login{
+  float: right;
+  height:30%;
+  width:3%;
+  margin-right: 1%;
+}
+
+#login:hover {
+  transform: scale(1.2);
+}
+
+#logout{
+  float: right;
+  height:30%;
+  width:3%;
+  margin-right: 1%;
+}
+
+#logout:hover {
+  transform: scale(1.2);
+}
+
+#prova{
+  height: 100%;
+  width: 100%;
+  margin-top: -4%;
+}
+
+#nom_sessio{
+  margin-left:96%;
 }
