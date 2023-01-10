@@ -12,9 +12,11 @@ export class CatalegComponent implements OnInit{
 
 
   constructor(private s: ServeiService) {
+
   }
 
   ngOnInit() {
+
   }
 
   addProducte(id: string){
