@@ -3,6 +3,7 @@ article{
   width: 75%;
   height: 85%;
   display: inline-block;
+
 }
 aside{
   background: linear-gradient(lightblue, cornflowerblue);
@@ -116,3 +117,52 @@ aside{
 #boton:hover:after {
   left: 50%;
 }
+
+#reset {
+  background: #fff;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+#reset:before, #reset:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background-color: cornflowerblue;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#reset:after {
+  left: 100%;
+}
+#reset:hover {
+  color: #fff;
+}
+#reset:hover:before {
+  left: 0;
+}
+#reset:hover:after {
+  left: 50%;
+}
+
+#subject{
+  width: fit-content;
+  height: fit-content;
+}
+
+#con_cistella{
+  height: 35%;
+  width: 15%;
+}
+
+

@@ -5,5 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class ServeiService {
 
-  constructor() { }
+
+  productes: string[] = [];
+
+  constructor() {
+  }
+
+
+
 }

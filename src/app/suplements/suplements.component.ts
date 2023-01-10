@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServeiService} from "../servei.service";
 
 @Component({
   selector: 'app-suplements',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class SuplementsComponent {
 
+  prova:any;
+
+
+  constructor(private s: ServeiService) {
+  }
+
+  ngOnInit() {
+  }
+
+  addProducte(id: string){
+    this.s.productes.push(document.getElementById(id)!.innerHTML)
+  }
 }
