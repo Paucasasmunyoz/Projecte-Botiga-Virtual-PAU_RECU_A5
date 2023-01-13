@@ -26,6 +26,7 @@ export class IniciSessioComponent implements OnInit{
 
       if ((nom==comprobar_nom)&&(contrasenya==comprobar_pass)){
         let correcte = localStorage.setItem("nombre",nom)
+        window.location.reload();
         alert("Correcte")
         return true;
       }

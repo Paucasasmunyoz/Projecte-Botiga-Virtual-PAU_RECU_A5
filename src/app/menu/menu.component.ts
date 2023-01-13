@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit{
     //@ts-ignore
     logout.onclick = function clear(){
       window.localStorage.clear()
+      window.location.reload();
     }
   }
 }

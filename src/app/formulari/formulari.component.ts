@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-formulari',
@@ -7,23 +8,33 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FormulariComponent implements OnInit{
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
     let boto_registre = document.getElementById("boton")
     //@ts-ignore
     boto_registre.onclick = function aaa(){
-      let nom;
-      let contrasenya;
-      //@ts-ignore
-      nom = document.getElementById("nomm").value;
-      //@ts-ignore
-      contrasenya = document.getElementById("pass").value;
 
-      localStorage.setItem("nom",nom);
-      localStorage.setItem("contrasenya",contrasenya);
     }
+  }
+
+
+  valorLogIn($myParam: string = ''): void{
+    const nav: string[] = ['/login']
+    if($myParam.length) {
+      nav.push($myParam);
+    }
+    this.router.navigate(nav)
+    let nom;
+    let contrasenya;
+    //@ts-ignore
+    nom = document.getElementById("nomm").value;
+    //@ts-ignore
+    contrasenya = document.getElementById("pass").value;
+
+    localStorage.setItem("nom",nom);
+    localStorage.setItem("contrasenya",contrasenya);
   }
 
 }
