@@ -26,6 +26,8 @@ export class FormulariComponent implements OnInit{
       nav.push($myParam);
     }
     this.router.navigate(nav)
+
+
     let nom;
     let contrasenya;
     //@ts-ignore
