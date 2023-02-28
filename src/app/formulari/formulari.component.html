@@ -27,18 +27,18 @@
 
       </div>
       <div id="cos">
-        <input id="nomm" type="text" value="" required>
+        <input name="nomm" id="nomm" type="text" value="" required [(ngModel)]="this.nom" />
         <br>
-        <input type="text" value="" required>
+        <input name="cognom" type="text" value="" required [(ngModel)]="this.cognom"/>
         <br>
-        <input type="text" value="" required>
+        <input  name="telefon" type="text" value="" required [(ngModel)]="this.telefon"/>
         <br>
         <input type="radio" group="Genero" value="home"> Home
         <input type="radio" group="Genero" value="dona"> Dona
         <br>
-        <input type="email" value="" required>
+        <input name="email" id="email" type="email" value="" required [(ngModel)]="this.email" />
         <br>
-        <input id="pass" type="password" required>
+        <input name="pass" id="pass" type="password" required [(ngModel)]="this.passw" />
         <br>
         <input type="date"  required>
         <br>

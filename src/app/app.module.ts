@@ -16,6 +16,9 @@ import { IniciSessioComponent } from './inici-sessio/inici-sessio.component';
 import { RobaComponent } from './roba/roba.component';
 import { AccesorisComponent } from './accesoris/accesoris.component';
 import { SuplementsComponent } from './suplements/suplements.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import { DadesUserComponent } from './dades-user/dades-user.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,14 @@ import { SuplementsComponent } from './suplements/suplements.component';
     IniciSessioComponent,
     RobaComponent,
     AccesorisComponent,
-    SuplementsComponent
+    SuplementsComponent,
+    DadesUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

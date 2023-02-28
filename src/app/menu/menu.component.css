@@ -50,3 +50,14 @@ header input {
 #nom_sessio{
   margin-left:96%;
 }
+
+#info_user{
+  text-decoration: none;
+  font-size: 14px;
+  color: #555555;
+  margin-left: 54.5%;
+}
+
+#info_user:hover{
+  color: white;
+}

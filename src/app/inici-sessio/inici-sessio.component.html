@@ -9,19 +9,19 @@
         <h1> Inici sessió</h1>
       </div>
       <div id="text">
-        Nom:
+        Email:
         <br>
         Contrasenya:
         <br>
       </div>
 
       <div id="cos">
-        <input id="nom_inici" type="text" value="" required>
+        <input id="email_inici" name="emailLog" type="text" value="" required [(ngModel)]="this.emailLog"/>
         <br>
-        <input id="pass_inici" type="password" required>
+        <input id="pass_inici" name="passLog" type="password" required [(ngModel)]="this.passLog"/>
         <br>
         <br>
-        <a id="boton">INICIA</a>
+        <a (click)="login()" id="boton">INICIA</a>
       </div>
 
 

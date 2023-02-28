@@ -16,6 +16,7 @@ import {IniciSessioComponent} from "./inici-sessio/inici-sessio.component";
 import {RobaComponent} from "./roba/roba.component";
 import {AccesorisComponent} from "./accesoris/accesoris.component";
 import {SuplementsComponent} from "./suplements/suplements.component";
+import {DadesUserComponent} from "./dades-user/dades-user.component";
 
 const routes: Routes = [
   {path: '' , component:PlanaPrincipalComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'cataleg/roba' , component:RobaComponent},
   {path: 'cataleg/accessoris' , component:AccesorisComponent},
   {path: 'cataleg/suplements' , component:SuplementsComponent},
+  {path: 'dadesUser' , component:DadesUserComponent},
 ]
 
 @NgModule({

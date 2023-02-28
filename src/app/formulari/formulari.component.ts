@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {HttpClient, HttpParams} from "@angular/common/http";
 
 @Component({
   selector: 'app-formulari',
@@ -7,16 +8,18 @@ import {Router} from "@angular/router";
   styleUrls: ['./formulari.component.css']
 })
 export class FormulariComponent implements OnInit{
+  nom: string='';
+  cognom: string='';
+  telefon: string='';
+  email: string='';
+  passw: string='';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
+
   }
 
   ngOnInit() {
-    let boto_registre = document.getElementById("boton")
-    //@ts-ignore
-    boto_registre.onclick = function aaa(){
 
-    }
   }
 
 
@@ -27,17 +30,21 @@ export class FormulariComponent implements OnInit{
     }
     this.router.navigate(nav)
 
-
     let nom;
     let contrasenya;
     //@ts-ignore
-    nom = document.getElementById("nomm").value;
+    nom = document.getElementById("email").value;
     //@ts-ignore
     contrasenya = document.getElementById("pass").value;
 
     localStorage.setItem("nom",nom);
     localStorage.setItem("contrasenya",contrasenya);
+
+    this.http.put<any>("http://localhost:3080/registre" , {nom: this.nom, cognom: this.cognom, telefon: this.telefon, email: this.email, passw:this.passw}).subscribe();
+
+
   }
+
 
 }
 

@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit{
   }
 
   ngOnInit() {
-      this.mostrar = localStorage.getItem("nombre")
+      this.mostrar = localStorage.getItem("nom_inici")
 
     //@ts-ignore
     logout.onclick = function clear(){
