@@ -50,10 +50,10 @@ export class IniciSessioComponent implements OnInit{
     var username:any;
     let req = new HttpParams().set('email',this.emailLog);
     let req2 = new HttpParams().set('passw',this.passLog);
-    this.http.get("http://localhost:3080/email", {params: req}).subscribe((client)=>{
+    this.http.get("http://172.16.6.1:3080/email", {params: req}).subscribe((client)=>{
       resultat=client;
       if(resultat==true){
-        this.http.get("http://localhost:3080/pass", {params: req2}).subscribe((client)=> {
+        this.http.get("http://172.16.6.1:3080/pass", {params: req2}).subscribe((client)=> {
           resultat = client;
           if(resultat == true){
             alert("Inici de sessió correcte")

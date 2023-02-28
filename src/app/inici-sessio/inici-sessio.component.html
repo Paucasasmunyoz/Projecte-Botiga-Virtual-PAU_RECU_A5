@@ -4,7 +4,7 @@
 
 <article>
   <div id="general">
-    <form method="get" id="formulari">
+    <form  (submit)="login()" method="get" id="formulari" ngNativeValidate>
       <div id="cabecera">
         <h1> Inici sessió</h1>
       </div>
@@ -16,12 +16,13 @@
       </div>
 
       <div id="cos">
-        <input id="email_inici" name="emailLog" type="text" value="" required [(ngModel)]="this.emailLog"/>
+        <input id="email_inici" name="emailLog" type="text" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.emailLog"/>
         <br>
-        <input id="pass_inici" name="passLog" type="password" required [(ngModel)]="this.passLog"/>
+        <input id="pass_inici" name="passLog" type="password" [ngModelOptions]="{standalone:true}"  [(ngModel)]="this.passLog"  required/>
         <br>
         <br>
-        <a (click)="login()" id="boton">INICIA</a>
+        <button type="submit" id="boton" >INICIA </button>
+
       </div>
 
 

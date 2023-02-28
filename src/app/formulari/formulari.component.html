@@ -4,7 +4,7 @@
 
 <article>
   <div id="general">
-    <form method="get" id="formulari">
+    <form (submit)="valorLogIn()" method="get" id="formulari" ngNativeValidate>
       <div id="cabecera">
         <h1> Registre nous usuaris</h1>
       </div>
@@ -27,18 +27,18 @@
 
       </div>
       <div id="cos">
-        <input name="nomm" id="nomm" type="text" value="" required [(ngModel)]="this.nom" />
+        <input name="nomm" id="nomm" type="text" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.nom" />
         <br>
-        <input name="cognom" type="text" value="" required [(ngModel)]="this.cognom"/>
+        <input name="cognom" type="text" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.cognom"/>
         <br>
         <input  name="telefon" type="text" value="" required [(ngModel)]="this.telefon"/>
         <br>
         <input type="radio" group="Genero" value="home"> Home
         <input type="radio" group="Genero" value="dona"> Dona
         <br>
-        <input name="email" id="email" type="email" value="" required [(ngModel)]="this.email" />
+        <input name="email" id="email" type="email" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.email" />
         <br>
-        <input name="pass" id="pass" type="password" required [(ngModel)]="this.passw" />
+        <input name="pass" id="pass" type="password"  [ngModelOptions]="{standalone:true}" [(ngModel)]="this.passw" required/>
         <br>
         <input type="date"  required>
         <br>
@@ -50,7 +50,8 @@
           nostre ús exclusiu. Les teves dades no seran
           facilitades a tercers </p>
         <br>
-        <a (click)="valorLogIn()" id="boton" >ENVIA</a>
+        <button type="submit" id="boton" >ENVIA </button>
+
       </div>
 
     </form>

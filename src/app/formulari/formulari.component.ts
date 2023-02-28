@@ -40,7 +40,7 @@ export class FormulariComponent implements OnInit{
     localStorage.setItem("nom",nom);
     localStorage.setItem("contrasenya",contrasenya);
 
-    this.http.put<any>("http://localhost:3080/registre" , {nom: this.nom, cognom: this.cognom, telefon: this.telefon, email: this.email, passw:this.passw}).subscribe();
+    this.http.put<any>("http://172.16.6.1:3080/registre" , {nom: this.nom, cognom: this.cognom, telefon: this.telefon, email: this.email, passw:this.passw}).subscribe();
 
 
   }
