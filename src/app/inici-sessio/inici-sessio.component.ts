@@ -52,11 +52,9 @@ export class IniciSessioComponent implements OnInit{
     let req2 = new HttpParams().set('passw',this.passLog);
     this.http.get("http://localhost:3080/email", {params: req}).subscribe((client)=>{
       resultat=client;
-      console.log(resultat);
       if(resultat==true){
         this.http.get("http://localhost:3080/pass", {params: req2}).subscribe((client)=> {
           resultat = client;
-          console.log(resultat);
           if(resultat == true){
             alert("Inici de sessió correcte")
             alert("Iniciat el usuari amb l'"+req)
