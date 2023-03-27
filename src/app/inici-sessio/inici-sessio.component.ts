@@ -26,47 +26,47 @@ export class IniciSessioComponent implements OnInit{
     }
     this.router.navigate(nav)
 
-    // let nom;
-    // let contrasenya;
-    // //@ts-ignore
-    // nom = document.getElementById("nom_inici").value;
-    // //@ts-ignore
-    // contrasenya = document.getElementById("pass_inici").value;
-    //
-    // let comprobar_nom = localStorage.getItem("nom")
-    // let comprobar_pass = localStorage.getItem("contrasenya")
-    //
-    // if ((nom==comprobar_nom)&&(contrasenya==comprobar_pass)){
-    //   let correcte = localStorage.setItem("nombre",nom)
-    //   window.location.reload();
-    //   alert("Correcte")
-    //
-    // }
-    // else{
-    //   alert("Inici de sessió incorrecte")
-    // }
+
 
     var resultat: Object =false;
     var username:any;
     let req = new HttpParams().set('email',this.emailLog);
     let req2 = new HttpParams().set('passw',this.passLog);
-    this.http.get("http://172.16.6.1:3080/email", {params: req}).subscribe((client)=>{
+    this.http.get("http://localhost:3080/email", {params: req}).subscribe((client)=>{
       resultat=client;
       if(resultat==true){
-        this.http.get("http://172.16.6.1:3080/pass", {params: req2}).subscribe((client)=> {
+        this.http.get("http://localhost:3080/pass", {params: req2}).subscribe((client)=> {
           resultat = client;
           if(resultat == true){
             alert("Inici de sessió correcte")
             alert("Iniciat el usuari amb l'"+req)
 
+
+            // let nom;
+            //
+            // // @ts-ignore
+            // nom = document.getElementById("emailinici").value;
+            // localStorage.getItem("nom");
+            // let correctee = localStorage.setItem("nom",nom)
+            //
+            // window.location.reload();
+            //
+            // console.log("Prova")
+            // console.log(nom)
+
+            const data = new Date()
+            const formatdata = data.toDateString() + " hora: " +data.getHours() + ":" + data.getMinutes()
+            const text ={
+              text: `/ Data: ${formatdata} Usuari: Acció: Inici de sessió correcte`
+            }
+            this.http.post<any>("http://localhost:3080/log/inici/sessioCorrecte", text).subscribe();
           }
           else{
             alert("Contrasenya incorrecte")}
         })
       }else{
+
         alert("Email incorrece")}
     });
-
-
   }
 }

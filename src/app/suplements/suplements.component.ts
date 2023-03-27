@@ -8,10 +8,19 @@ import {ServeiService} from "../servei.service";
 })
 export class SuplementsComponent {
 
+  imatges: any[];
   prova:any;
 
 
   constructor(private s: ServeiService) {
+    const images={
+      creatina: "http://localhost:3080/imatges/creatinas",
+      proteina: "http://localhost:3080/imatges/proteinaaa",
+      barretes: "http://localhost:3080/imatges/barrita",
+    }
+
+    this.imatges=[];
+    this.imatges.push(images)
   }
 
   ngOnInit() {

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CistellaComponent } from './cistella/cistella.component';
@@ -19,6 +18,7 @@ import { SuplementsComponent } from './suplements/suplements.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { DadesUserComponent } from './dades-user/dades-user.component';
+import {NgbCarousel, NgbRating} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -43,8 +43,15 @@ import { DadesUserComponent } from './dades-user/dades-user.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbRating,
+    NgbCarousel,
   ],
   providers: [],
+  exports: [
+    NavegacioComponent,
+    MenuComponent,
+    PeuPaginaComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

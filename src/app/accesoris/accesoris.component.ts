@@ -8,9 +8,18 @@ import {ServeiService} from "../servei.service";
 })
 export class AccesorisComponent {
   prova:any;
+  imatges: any[];
 
 
   constructor(private s: ServeiService) {
+    const images= {
+      motxilla: "http://localhost:3080/imatges/motxilla",
+      genollera: "http://localhost:3080/imatges/genollera",
+      straps: "http://localhost:3080/imatges/strap",
+    }
+
+    this.imatges=[];
+    this.imatges.push(images)
   }
 
   ngOnInit() {

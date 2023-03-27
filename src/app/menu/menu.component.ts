@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-menu',
@@ -7,12 +8,25 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MenuComponent implements OnInit{
   mostrar: any;
-  constructor() {
+  imatges: any[];
+
+
+
+  constructor( private http: HttpClient) {
+    const images={
+      logo: "http://localhost:3080/imatges/logo",
+      login: "http://localhost:3080/imatges/login",
+      logout: "http://localhost:3080/imatges/logout",
+    }
+
+    this.imatges=[];
+    this.imatges.push(images)
 
   }
 
+
   ngOnInit() {
-      this.mostrar = localStorage.getItem("nom_inici")
+      this.mostrar = localStorage.getItem("nom")
 
     //@ts-ignore
     logout.onclick = function clear(){
@@ -20,4 +34,6 @@ export class MenuComponent implements OnInit{
       window.location.reload();
     }
   }
+
+
 }

@@ -4,7 +4,7 @@
 <article>
 
   <div class="contpro" id="pro1">
-    <img id="imgimg" src="../../assets/imatges/creatinas.png" >
+    <img id="imgimg" [src]="imatges[0].creatina" >
     <p class="titolpro">500g de Creatina </p>
     <p>40,59€</p>
     <button (click)="addProducte('pro1')" id="botpro1" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
@@ -12,14 +12,14 @@
 
 
   <div class="contpro" id="pro2">
-    <img src="../../assets/imatges/proteinaaa.png"/>
+    <img [src]="imatges[0].proteina"/>
     <p class="titolpro">2kg de Proteina</p>
     <p>80,59€</p>
     <button (click)="addProducte('pro2')" id="botpro2" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
   </div>
 
   <div class="contpro" id="pro4">
-    <img src="../../assets/imatges/barrita.png"/>
+    <img [src]="imatges[0].barretes"/>
     <p class="titolpro">Barretes energetiques xocolata</p>
     <p>24,59€</p>
     <button (click)="addProducte('pro4')" id="botpro4" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>

@@ -1,14 +1,15 @@
 <app-menu></app-menu>
 <app-navegacio></app-navegacio>
 <article>
+
   <div id="ImgArt">
-    <img id="ImgArt2" src="../../assets/imatges/imagen2.png"><br/>
-  </div>
+    <img id="ImgArt2" [src]="imatges2[0].principal"><br/>-->
+  </div>-->
   <div id="imgs">
-    <a><img src="../../assets/imatges/proteina.png"></a>
-    <a><img src="../../assets/imatges/creatina.png"></a>
-    <a><img src="../../assets/imatges/ropa.png"></a>
-    <a><img src="../../assets/imatges/vitaminas.png"></a>
+    <a><img [src]="imatges2[0].lproteina" ></a>
+    <a><img [src]="imatges2[0].lcreatina"></a>
+    <a><img [src]="imatges2[0].lropa"></a>
+    <a><img [src]="imatges2[0].lvitaminas"></a>
   </div>
 </article>
 <app-peu-pagina></app-peu-pagina>

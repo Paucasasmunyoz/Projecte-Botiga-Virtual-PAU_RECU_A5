@@ -20,3 +20,8 @@ article{
   width: 10%;
   padding: 7%;
 }
+
+article img{
+  height: 50%;
+  width: 30%;
+}

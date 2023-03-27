@@ -1,13 +1,13 @@
 article{
   background: linear-gradient(gainsboro, lightblue);
   width: 80%;
-  height: 95%;
+  height: 120%;
   display: inline-block;
 }
 
 aside{
   background: linear-gradient(lightblue, cornflowerblue);
-  height: 95%;
+  height: 120%;
   width: 20%;
   display: inline-block;
   float: right;
@@ -27,7 +27,7 @@ aside{
 }
 
 .contpro img{
-  height: 80%;
+  height: 60%;
   width: 100%;
 }
 
@@ -67,5 +67,10 @@ aside h1{
 .bot_carrito{
   height: 15%;
   width: 20%;
+  margin-left: 40%;
 }
 
+.valoracio{
+  margin-left: 30%;
+  margin-right: 40%;
+}

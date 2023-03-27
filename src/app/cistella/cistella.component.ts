@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ServeiService} from "../servei.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-cistella',
@@ -10,7 +11,8 @@ export class CistellaComponent implements OnInit{
 
   mostrar: any;
 
-  constructor(private s:ServeiService) {
+
+  constructor(private s:ServeiService, private http: HttpClient) {
 
      this.mostrar = this.s.productes;
   }
@@ -23,6 +25,15 @@ export class CistellaComponent implements OnInit{
     console.log(this.mostrar)
    }
 
+
+  pagar(pagar: string) {
+    const data = new Date()
+    const formatdata = data.toDateString() + " hora: " +data.getHours() + ":" + data.getMinutes()
+    const text ={
+      text: `/ Data: ${formatdata} Usuari: Acció: Pagar cistella \n`
+    }
+    this.http.post<any>("http://localhost:3080/log/pagar/cistella", text).subscribe();
+  }
 
 
 }
