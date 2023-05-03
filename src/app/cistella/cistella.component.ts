@@ -57,15 +57,17 @@ export class CistellaComponent implements OnInit{
     this.data_prod= this.datePipe.transform(data,'yyyy-MM-dd');
 
 
-    for(let i=0;i<this.cistella.length;i++){
-      let query = `INSERT INTO botigaprjmarcpau.historial (usuari, producte , oferta, data) VALUES (?,?,?,?);
-      let values =[this.user,this.cistella[i].id,false,this.data_prod]`;
 
+    for(let i=0;i<this.cistella.length;i++){
+
+      let query = `INSERT INTO botigaprjmarcpau.historial (usuari, producte , oferta, data) VALUES (?,?,?,?)`;
+      let values =[this.user,this.cistella[i].nom,false,this.data_prod];
 
       console.log('Producte afegit')
 
-      this.http.post('http://localhost:3080/afegir_prod_hist',{query}).subscribe();
+      this.http.post('http://localhost:3080/afegir_prod_hist',{query, values}).subscribe();
     }
+
 
 
     this.http.post<any>("http://localhost:3080/log/pagar/cistella", text).subscribe();
@@ -74,11 +76,6 @@ export class CistellaComponent implements OnInit{
 
     alert('Has realitzat la compra')
 
-
-
-
+    window.location.reload()
   }
-
-
-
 }
