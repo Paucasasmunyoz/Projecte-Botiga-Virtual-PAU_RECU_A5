@@ -26,7 +26,6 @@ export class SuplementsComponent {
   ngOnInit() {
   }
 
-  addProducte(id: string){
-    this.s.productes.push(document.getElementById(id)!.innerHTML)
-  }
+
+
 }

@@ -1,10 +1,7 @@
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 
@@ -12,92 +9,18 @@
 <app-navegacio></app-navegacio>
 <article>
 
-  <div class="contpro" id="pro1">
-    <img [src]="imatges[0].creatina" >
-    <p class="titolpro">500g de Creatina </p>
-    <p id="preupro1" >40,59€</p>
-    <ngb-rating class="valoracio"[rate]="4"></ngb-rating>
-    <button (click)="addProducte1('pro1')"  id="botpro1" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
+  <ng-container *ngFor="let producte of products">
+    <div class="contpro">
+      <div *ngIf="producte">
+        <img src="{{producte.imatge}}">
+        <p>{{producte.nom}}</p>
+        <p>{{producte.preu}} €</p>
 
-
-  <div class="contpro" id="pro2">
-    <img [src]="imatges[0].proteina"/>
-    <p class="titolpro">2kg de Proteina</p>
-    <p>80,59€</p>
-    <ngb-rating class="valoracio" [rate]="2"></ngb-rating>
-    <button (click)="addProducte2('pro2')" id="botpro2" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-
-  <div class="contpro" id="pro3">
-    <img [src]="imatges[0].pantalo">
-    <p class="titolpro">Pantaló Nike d'home</p>
-    <p>29,99€</p>
-    <ngb-rating class="valoracio" [rate]="2"></ngb-rating>
-    <button (click)="addProducte3('pro3')" id="botpro3" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-
-  <div class="contpro" id="pro4">
-    <img [src]="imatges[0].barrita"/>
-    <p class="titolpro">Barretes energetiques </p>
-    <p>24,59€</p>
-    <ngb-rating class="valoracio" [rate]="2"></ngb-rating>
-    <button (click)="addProducte4('pro4')" id="botpro4" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-
-  <div class="contpro" id="pro5">
-    <img [src]="imatges[0].tuperr"/>
-    <p class="titolpro">Tupper de plàstic</p>
-    <p>8€</p>
-    <ngb-rating class="valoracio" [rate]="5"></ngb-rating>
-    <button (click)="addProducte5('pro5')" id="botpro5" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div><br/>
-
-
-  <div class="contpro" id="pro6">
-    <img [src]="imatges[0].strap"/>
-    <p class="titolpro">Straps de tela</p>
-    <p>15,99€</p>
-    <ngb-rating class="valoracio" [rate]="4"></ngb-rating>
-    <button (click)="addProducte6('pro6')" id="botpro6" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-
-  <div class="contpro" id="pro7">
-    <img [src]="imatges[0].motxilla"/>
-    <p class="titolpro">Motxilla de competició</p>
-    <p>24,59€</p>
-    <ngb-rating class="valoracio" [rate]="4"></ngb-rating>
-    <button (click)="addProducte7('pro7')" id="botpro7" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-
-  <div class="contpro" id="pro8">
-    <img [src]="imatges[0].genollera"/>
-    <p class="titolpro">Genollera</p>
-    <p>9,99€</p>
-    <ngb-rating class="valoracio" [rate]="4"></ngb-rating>
-    <button (click)="addProducte8('pro8')" id="botpro8" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-  <div class="contpro" id="pro9">
-    <img [src]="imatges[0].top"/>
-    <p class="titolpro">Top Nike dona</p>
-    <p>25.99€</p>
-    <ngb-rating class="valoracio" [rate]="4"></ngb-rating>
-    <button (click)="addProducte9('pro9')" id="botpro9" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
-
-  <div class="contpro" id="pro10">
-    <img [src]="imatges[0].leggins"/>
-    <p class="titolpro">Leggins Nike dona</p>
-    <p>30€</p>
-    <ngb-rating class="valoracio" [rate]="4"></ngb-rating>
-    <button (click)="addProducte10('pro10')" id="botpro10" class="bot_carrito"><img src="../../assets/imatges/carrito.png"/></button>
-  </div>
+        <ngb-rating class="valoracio" [rate]="5"></ngb-rating>
+        <button id="botcar" (click)="anadircarrito(producte)">Afegir</button><br>
+      </div>
+    </div>
+  </ng-container>
 
 </article>
 

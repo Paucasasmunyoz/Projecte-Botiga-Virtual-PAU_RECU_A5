@@ -25,7 +25,5 @@ export class AccesorisComponent {
   ngOnInit() {
   }
 
-  addProducte(id: string){
-    this.s.productes.push(document.getElementById(id)!.innerHTML)
-  }
+
 }

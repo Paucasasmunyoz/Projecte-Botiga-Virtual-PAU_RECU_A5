@@ -16,7 +16,8 @@ aside{
 .contpro{
   height: 35%;
   width: 15%;
-  float: left;
+  /*float: left;*/
+  float: right;
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 10%;
@@ -73,4 +74,8 @@ aside h1{
 .valoracio{
   margin-left: 30%;
   margin-right: 40%;
+}
+
+#botcar{
+  margin-left: 30%;
 }

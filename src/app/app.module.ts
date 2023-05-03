@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { DadesUserComponent } from './dades-user/dades-user.component';
 import {NgbCarousel, NgbRating} from "@ng-bootstrap/ng-bootstrap";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import {NgbCarousel, NgbRating} from "@ng-bootstrap/ng-bootstrap";
     NgbRating,
     NgbCarousel,
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   exports: [
     NavegacioComponent,
     MenuComponent,

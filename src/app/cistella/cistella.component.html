@@ -2,14 +2,30 @@
 <app-navegacio></app-navegacio>
 
 <article>
+<!--  <div *ngFor="let producte of cistella; let i = index" class="prod">-->
+<!--    <div *ngIf="producte">-->
+<!--    <img src="{{producte.imatge}}">-->
+<!--    <p> {{producte.nom}} </p>-->
+<!--    <p> {{producte.preu}} €</p>-->
 
-    <code id="subject"></code>
+<!--    </div>-->
+<!--  </div>-->
+
+
+  <ng-container *ngFor="let producte of cistella; let i = index">
+    <div class="prod" *ngIf="producte">
+      <img [src]="producte.imatge">
+      <p>{{producte.nom}}</p>
+      <p>{{producte.preu}} €</p>
+    </div>
+  </ng-container>
 
 </article>
 <aside>
   <div id="preu_general">
     <h1> Preu:</h1>
-    <p> ------- </p>
+    <p>Preu final:  {{preutotalcistella()}} €</p>
+
     <div id="preu_total">
 
       <button (click)="pagar('pagar')" id="boton" class="bot_carrito">Pagar</button>
