@@ -1,12 +1,23 @@
 <app-menu></app-menu>
 <app-navegacio></app-navegacio>
 <article>
-  <h1>Dades usuari loguejat</h1>
-  <p>Nom:</p>
-  <p>Cognom:</p>
-  <p>Telefon:</p>
-  <p>Email:</p>
-  <p>Contrasenya:</p>
-
+  <div *ngIf="!editarModo">
+    <h3>{{ usuario?.nom }}</h3>
+    <p>{{ usuario?.cognom }}</p>
+    <p>{{ usuario?.telefon }}</p>
+    <p>{{ usuario?.email }}</p>
+    <button (click)="editarUsuario()">Editar</button>
+  </div>
+  <div *ngIf="editarModo">
+    <h3>Editar información</h3>
+    <form (submit)="guardarCambios()">
+      <input type="text" [(ngModel)]="usuario.nom" name="nom" placeholder="Nombre">
+      <input type="text" [(ngModel)]="usuario.cognom" name="cognom" placeholder="Apellido">
+      <input type="text" [(ngModel)]="usuario.telefon" name="telefon" placeholder="Teléfono">
+      <input type="email" [(ngModel)]="usuario.email" name="email" placeholder="Correo electrónico" disabled>
+      <button type="submit">Guardar</button>
+      <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+    </form>
+  </div>
 </article>
 <app-peu-pagina></app-peu-pagina>

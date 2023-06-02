@@ -4,7 +4,8 @@
 
 <article>
   <div id="general">
-    <form (submit)="valorLogIn()" method="get" id="formulari" ngNativeValidate>
+
+    <form (submit)="valorLogIn()" method="get" id="formulari2" ngNativeValidate>
       <div id="cabecera">
         <h1> Registre nous usuaris</h1>
       </div>
@@ -27,6 +28,7 @@
 
       </div>
       <div id="cos">
+
         <input name="nomm" id="nomm" type="text" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.nom" />
         <br>
         <input name="cognom" type="text" value="" required [ngModelOptions]="{standalone:true}" [(ngModel)]="this.cognom"/>
@@ -50,6 +52,7 @@
           nostre ús exclusiu. Les teves dades no seran
           facilitades a tercers </p>
         <br>
+
         <button type="submit" id="boton" >ENVIA </button>
 
       </div>

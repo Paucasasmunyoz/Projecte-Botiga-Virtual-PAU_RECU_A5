@@ -15,11 +15,14 @@ import { IniciSessioComponent } from './inici-sessio/inici-sessio.component';
 import { RobaComponent } from './roba/roba.component';
 import { AccesorisComponent } from './accesoris/accesoris.component';
 import { SuplementsComponent } from './suplements/suplements.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 import { DadesUserComponent } from './dades-user/dades-user.component';
-import {NgbCarousel, NgbRating} from "@ng-bootstrap/ng-bootstrap";
-import {DatePipe} from "@angular/common";
+import { NgbCarousel, NgbRating } from "@ng-bootstrap/ng-bootstrap";
+import { DatePipe } from "@angular/common";
+import { initializeApp, FirebaseOptions } from 'firebase/app';
+import { environment } from '../environment';
+import { CambiarContrasenyaComponent } from './cambiar-contrasenya/cambiar-contrasenya.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import {DatePipe} from "@angular/common";
     RobaComponent,
     AccesorisComponent,
     SuplementsComponent,
-    DadesUserComponent
+    DadesUserComponent,
+    CambiarContrasenyaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,10 @@ import {DatePipe} from "@angular/common";
     NgbCarousel,
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    { provide: 'FirebaseApp', useFactory: () => initializeApp(environment.firebaseConfig) },
+    { provide: 'AppName', useFactory: () => initializeApp(environment.firebaseConfig).name },
+    { provide: 'AppOptions', useFactory: () => initializeApp(environment.firebaseConfig).options as FirebaseOptions }
   ],
   exports: [
     NavegacioComponent,

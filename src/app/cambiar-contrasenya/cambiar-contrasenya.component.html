@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+<app-navegacio></app-navegacio>
+<article>
+  <div class="formulario">
+    <h1>Cambio de contraseña</h1>
+    <p>Introduce tu cuenta de correo electrónico para cambiar la contraseña.</p>
+    <form class="form">
+      <p type="Correo"><input placeholder="Email" [(ngModel)]="correo" [ngModelOptions]="{standalone:true}"></p>
+      <button (click)="enviarCorreo()">Enviar</button>
+    </form>
+  </div>
+  <div class="formulario">
+    <h1>Cambiar contraseña</h1>
+    <p>Introduce tu nueva contraseña.</p>
+    <form class="form">
+      <p type="Contraseña"><input type="password" placeholder="Nueva Contraseña" [(ngModel)]="nuevaContrasenya" [ngModelOptions]="{standalone:true}"></p>
+      <button (click)="cambiarContrasenya()">Cambiar</button>
+    </form>
+  </div>
+</article>
+<app-peu-pagina></app-peu-pagina>
