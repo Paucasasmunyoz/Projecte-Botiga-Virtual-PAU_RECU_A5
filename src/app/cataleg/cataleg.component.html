@@ -1,44 +1,51 @@
 <head>
   <meta charset="utf-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
 </head>
 
 <app-menu></app-menu>
 <app-navegacio></app-navegacio>
 <article>
-
   <ng-container *ngFor="let producte of products">
     <div class="contpro">
       <div *ngIf="producte">
         <img src="{{producte.imatge}}">
         <p>{{producte.nom}}</p>
         <p>{{producte.preu}} €</p>
-
         <ngb-rating class="valoracio" [rate]="5"></ngb-rating>
         <button id="botcar" (click)="anadircarrito(producte)">Afegir</button><br>
       </div>
     </div>
   </ng-container>
-
 </article>
 
 <aside>
   <div id="cont_cat">
     <h1> Categories </h1>
-    <li><a routerLink="/cataleg" routerLinkActive="active">Tot</a> </li>
-    <li><a routerLink="/cataleg/roba" routerLinkActive="active">Roba</a> </li>
-    <li><a routerLink="/cataleg/accessoris" routerLinkActive="active">Accesoris</a> </li>
-    <li><a routerLink="/cataleg/suplements" routerLinkActive="active"> Suplements</a> </li>
+    <li><a routerLink="/cataleg" routerLinkActive="active">Tot</a></li>
+    <li><a routerLink="/cataleg/roba" routerLinkActive="active">Roba</a></li>
+    <li><a routerLink="/cataleg/accessoris" routerLinkActive="active">Accesoris</a></li>
+    <li><a routerLink="/cataleg/suplements" routerLinkActive="active">Suplements</a></li>
   </div>
 </aside>
 
+<div class="container">
+  <h2>Afegir Producte</h2>
+  <form (ngSubmit)="agregarProducto()" class="product-form">
+    <div class="form-group">
+      <label for="nombre">Nom:</label>
+      <input type="text" id="nombre" [(ngModel)]="nom" name="nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="precio">Preu:</label>
+      <input type="number" id="precio" [(ngModel)]="preu" name="precio" required>
+    </div>
+    <div class="form-group">
+      <label for="imagen">Imatge:</label>
+      <input type="text" id="imagen" [(ngModel)]="imatge" name="imagen" required>
+    </div>
+    <button type="submit" class="submit-btn">Agregar</button>
+  </form>
+</div>
+
 <app-peu-pagina></app-peu-pagina>
-
-
-
-
-
-
-

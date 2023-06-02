@@ -4,6 +4,7 @@ import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
 import {HttpClient} from "@angular/common/http";
 import {ProducteBoti} from "../producte-boti";
 import {ServeiProdService} from "../servei-prod.service";
+import { v4 as uuidv4 } from 'uuid';
 
 
 @Component({
@@ -13,9 +14,10 @@ import {ServeiProdService} from "../servei-prod.service";
 
 })
 export class CatalegComponent implements OnInit{
-
+  nom: string = '';
+  preu: null = null;
+  imatge: string = '';
   prova:any;
-
   currentRate = 8;
 
   //@ts-ignore
@@ -33,6 +35,33 @@ export class CatalegComponent implements OnInit{
       this.products = productes;
     })
   }
+
+  agregarProducto() {
+    const producto = {
+      id: uuidv4(), // Genera un ID único
+      nom: this.nom,
+      preu: this.preu,
+      imatge: this.imatge
+    };
+    this.http.post('http://localhost:3080/agregar-producto', producto)
+      .subscribe(
+        () => {
+          console.log('Producto agregado correctamente');
+          this.resetForm();
+        },
+        error => {
+          console.error('Error al agregar el producto:', error);
+        }
+      );
+  }
+
+
+  resetForm() {
+    this.nom = '';
+    this.preu = null;
+    this.imatge = '';
+  }
+
 
   anadircarrito(productes: ProducteBoti): void{
     this.s.afegircistella(productes);
