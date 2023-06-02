@@ -17,7 +17,7 @@ export class DadesUserComponent implements OnInit {
   }
 
   obtenerUsuario(): void {
-    const email = 'pau.casas10@gmail.com'; // Reemplaza esto con el correo del usuario logeado
+    const email = 'pau.casas10@gmail.com'; // USUARI LOGEJAT
     this.http.get<any>('http://localhost:3080/usuario/' + email)
       .subscribe(data => {
         this.usuario = data;
@@ -29,11 +29,11 @@ export class DadesUserComponent implements OnInit {
   }
 
   guardarCambios(): void {
-    const email = 'pau.casas10@gmail.com'; // Reemplaza esto con el correo del usuario logeado
+    const email = 'pau.casas10@gmail.com'; // USUARI LOGEJAT
     this.http.put<any>('http://localhost:3080/usuarios/' + email, this.usuario)
       .subscribe(() => {
         this.editarModo = false;
-        this.obtenerUsuario(); // Actualizar la información del usuario después de guardar los cambios
+        this.obtenerUsuario();
       });
   }
 
